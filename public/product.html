@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div id="logo">
+            <a class="navbar-brand" href="index.html">
+                <span>Prada</span> <i>Shoes</i>
+            </a>
+        </div>
+
+        <ul>
+            <li class="item"><a href="index3.html">Home</a></li>
+            <li class="item"><a href="#services-container">About</a></li>
+            <li class="item"><a href="#client-section">Team</a></li>
+            <li class="item"><a href="index4.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="product-details">
+        <div class="image-slider">
+            <div class="product-images">
+                <img src="img/product/pic7.jpg" class="active" alt="">
+                <img src="img/product/product1.png" alt="">
+                <img src="img/product/pic7.jpg" alt="">
+                <img src="img/product/product1.png" alt="">
+            </div>
+        </div>
+    
+        <div class="details">
+             <h2 class="product-brand">calvin klein</h2>
+             <p class="product-short-des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+             <span class="product-price">$99</span>
+             <span class="product-actual-price">$200</span>
+             <span class="product-discount">( 50% off )</span>
+     
+             <p class="product-sub-heading">select size</p>
+     
+             <input type="radio" name="size" value="s" checked hidden id="s-size">
+             <label for="s-size" class="size-radio-btn check">s</label>
+             <input type="radio" name="size" value="m" hidden id="m-size">
+             <label for="m-size" class="size-radio-btn ">m</label>
+             <input type="radio" name="size" value="l" hidden id="l-size">
+             <label for="l-size" class="size-radio-btn">l</label>
+             <input type="radio" name="size" value="xl" hidden id="xl-size">
+             <label for="xl-size" class="size-radio-btn">xl</label>
+             <input type="radio" name="size" value="xxl" hidden id="xxl-size">
+             <label for="xxl-size" class="size-radio-btn">xxl</label>
+     
+             <button class="btn cart-btn">add to cart</button>
+             <button class="btn">add to wishlist</button>
+         </div>
+     </section>
+
+     <section class="detail-des">
+        <h2 class="heading">description</h2>
+        <p class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, repellat temporibus eaque numquam cupiditate facere consectetur ipsum officia a, provident in? Impedit suscipit reprehenderit odio id ratione assumenda debitis tempore aliquid, dicta cupiditate aut rerum, nulla minus, dolorum mollitia nihil quisquam veritatis! Repudiandae, ipsam, nisi id necessitatibus autem sapiente maiores omnis velit blanditiis nihil quisquam laborum rerum? Earum delectus aut ipsam, repellat debitis at id minus nemo maiores porro eveniet aliquam accusantium, quaerat provident ea nesciunt ipsum. Asperiores, molestias doloribus.</p>
+    </section>
+
+
+    <footer>
+        <div class="footer">
+            <h1>Prada Shoes</h1>
+            <p>Lorem ipsum quia dolor sit amet,<br> consectetur, adipisci velit, sed quia non <br>numquam eius modi
+                tempora</p>
+            <div class="icons">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class=store>
+            <h1>Store Information</h1>
+            <div class=store-info>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                Phone Number<br>
+                +1 234 567 8901
+                <br><br>
+
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                Email Address<br>
+                Email : mail@example.com<br><br>
+
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                Location<br>
+                Broome St, NY 10002,California, USA.
+            </div>
+        </div>
+
+
+    </footer>
+</body>
+
+<script>
+    const productImages = document.querySelectorAll(".product-images img"); // selecting all image thumbs
+const productImageSlide = document.querySelector(".image-slider"); // seclecting image slider element
+
+let activeImageSlide = 0; // default slider image
+
+productImages.forEach((item, i) => { // loopinh through each image thumb
+    item.addEventListener('click', () => { // adding click event to each image thumbnail
+        productImages[activeImageSlide].classList.remove('active'); // removing active class from current image thumb
+        item.classList.add('active'); // adding active class to the current or clicked image thumb
+        productImageSlide.style.backgroundImage = `url('${item.src}')`; // setting up image slider's background image
+        activeImageSlide = i; // updating the image slider variable to track current thumb
+    })
+})
+
+const sizeBtns = document.querySelectorAll('.size-radio-btn'); // selecting size buttons
+let checkedBtn = 0; // current selected button
+
+sizeBtns.forEach((item, i) => { // looping through each button
+    item.addEventListener('click', () => { // adding click event to each 
+        sizeBtns[checkedBtn].classList.remove('check'); // removing check class from the current button
+        item.classList.add('check'); // adding check class to clicked button
+        checkedBtn = i; // upading the variable
+    })
+})
+</script>
+</html>
