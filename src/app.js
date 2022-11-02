@@ -6,6 +6,7 @@ require("./db/conn");
 const Register = require("./models/register");
 const Contact = require("./models/contactus");
 const { resourceLimits } = require("worker_threads");
+const Cart = require("./models/cart");
 
 
 
@@ -78,8 +79,15 @@ app.get('/product', (req,res) => {
     res.sendFile(path.join(__dirname,"../public/index2.html"));
 })
 
-// contact 
+//add to cart
+app.post('/product',(req,res)=>{
+    let myCart = Cart(req.body);
+    myCart.save();
+    res.redirect('/product');
+})
 
+
+// contact 
 app.get('/contact', (req,res) => {
     res.sendFile(path.join(__dirname,"../public/index4.html"));
 })
@@ -96,8 +104,6 @@ app.post('/contact',(req, res)=>{
     });
 
 });
-
-
 
 
 app.listen(port, () =>{

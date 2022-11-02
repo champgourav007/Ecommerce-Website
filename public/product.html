@@ -31,10 +31,10 @@
             </div>
         </div>
     
-        <div class="details">
-             <h2 class="product-brand">calvin klein</h2>
+        <form class="details" method="post" action="/product">
+             <input type="text" id="name" name="name" value="calvin klein" class="product-brand">
              <p class="product-short-des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
-             <span class="product-price">$99</span>
+             <input class="product-price" type="text" name="price" value="$99">
              <span class="product-actual-price">$200</span>
              <span class="product-discount">( 50% off )</span>
      
@@ -50,10 +50,10 @@
              <label for="xl-size" class="size-radio-btn">xl</label>
              <input type="radio" name="size" value="xxl" hidden id="xxl-size">
              <label for="xxl-size" class="size-radio-btn">xxl</label>
-     
-             <button class="btn cart-btn">add to cart</button>
+
+             <input type="submit" class="btn cart-btn" value="Add To Cart">
              <button class="btn">add to wishlist</button>
-         </div>
+        </form>
      </section>
 
      <section class="detail-des">
